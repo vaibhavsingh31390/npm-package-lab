@@ -1,0 +1,23 @@
+import typescript from "@rollup/plugin-typescript";
+import del from "rollup-plugin-delete";
+
+/** @type {import("rollup").RollupOptions} */
+const config = {
+  input: "src/index.ts",
+  output: [
+    {
+      file: "lib/index.cjs",
+      format: "cjs",
+    },
+    {
+      file: "lib/index.esm.js",
+      format: "esm",
+    },
+  ],
+  plugins: [
+    del({ targets: "lib/*" }),
+    typescript({ tsconfig: "./tsconfig.json" }),
+  ],
+};
+
+export default config;

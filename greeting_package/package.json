@@ -1,0 +1,38 @@
+{
+  "name": "@vaibhav_webdev1/greeting-package",
+  "version": "1.0.1",
+  "description": "A simple npm package for greeting someone every day.",
+  "license": "MIT",
+  "author": "Vaibhav Singh",
+  "type": "module",
+  "main": "lib/index.cjs",
+  "exports": {
+    "import": {
+      "default": "./lib/index.esm.js",
+      "types": "./lib/types/index.d.ts"
+    },
+    "require": {
+      "import": {
+        "default": "./lib/index.cjs",
+        "types": "./lib/types/index.d.ts"
+      }
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaibhavsingh31390/npm-package-lab"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.3.0",
+    "rollup": "^4.63.5",
+    "rollup-plugin-delete": "^3.0.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
+  }
+}
